@@ -1,0 +1,12 @@
+<aspectj>
+<aspects>
+<aspect name="com.j1987.coffeeroo.web.JCompanyController_Roo_Controller"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompany_Roo_Jpa_Entity"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompany_Roo_ToString"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompany_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompany_Roo_JavaBean"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompany_Roo_Configurable"/>
+<aspect name="com.j1987.coffeeroo.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+</aspects>
+</aspectj>
+

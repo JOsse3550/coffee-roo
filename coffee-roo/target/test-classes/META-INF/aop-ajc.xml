@@ -1,0 +1,9 @@
+<aspectj>
+<aspects>
+<aspect name="com.j1987.coffeeroo.domain.JCompanyDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompanyDataOnDemand_Roo_Configurable"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompanyIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.j1987.coffeeroo.domain.JCompanyIntegrationTest_Roo_Configurable"/>
+</aspects>
+</aspectj>
+
