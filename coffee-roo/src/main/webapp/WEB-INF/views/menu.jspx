@@ -38,6 +38,7 @@
         <menu:category id="c_juser" z="zPfbJxGDYoTggFCqSI5PcP28wvw=">
             <menu:item id="i_juser_new" messageCode="global_menu_new" url="/jusers?form" z="HF6035uEZl4582/802l4lQHDIdk="/>
             <menu:item id="i_juser_list" messageCode="global_menu_list" url="/jusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="j5DCIt2x7hIKeg1q7+l+fzKNWo4="/>
+            <menu:item id="i_juser_userreportlist_report" messageCode="menu_juser_userreportlist_report" url="/jusers/reports/userreportlist?form" z="cLpzy5vJaR9WDFuaVsvyBvdNBWs="/>
         </menu:category>
         <menu:category id="c_jlocalization" z="8y/FWR8iiEOrCRhtSlUgOpCt1e0=">
             <menu:item id="i_jlocalization_new" messageCode="global_menu_new" url="/jlocalizations?form" z="Q4NQJaAkw3w5SyEyQB3s3y6s5mM="/>

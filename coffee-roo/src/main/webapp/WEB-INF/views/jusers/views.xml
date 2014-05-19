@@ -13,4 +13,7 @@
 <definition extends="default" name="jusers/update">
         <put-attribute name="body" value="/WEB-INF/views/jusers/update.jspx"/>
     </definition>
+<definition extends="default" name="jusers/userreportlist">
+        <put-attribute name="body" value="/WEB-INF/views/jusers/userreportlist.jspx"/>
+    </definition>
 </tiles-definitions>
