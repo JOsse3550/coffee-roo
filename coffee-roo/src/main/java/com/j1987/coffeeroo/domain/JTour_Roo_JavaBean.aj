@@ -3,23 +3,23 @@
 
 package com.j1987.coffeeroo.domain;
 
-import com.j1987.coffeeroo.domain.JCompany;
+import com.j1987.coffeeroo.domain.JTour;
 
-privileged aspect JCompany_Roo_JavaBean {
+privileged aspect JTour_Roo_JavaBean {
     
-    public String JCompany.getName() {
+    public String JTour.getName() {
         return this.name;
     }
     
-    public void JCompany.setName(String name) {
+    public void JTour.setName(String name) {
         this.name = name;
     }
     
-    public String JCompany.getDescription() {
+    public String JTour.getDescription() {
         return this.description;
     }
     
-    public void JCompany.setDescription(String description) {
+    public void JTour.setDescription(String description) {
         this.description = description;
     }
     
