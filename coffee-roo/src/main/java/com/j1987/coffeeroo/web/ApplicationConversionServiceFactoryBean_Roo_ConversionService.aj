@@ -3,12 +3,17 @@
 
 package com.j1987.coffeeroo.web;
 
+import com.j1987.coffeeroo.domain.JCoffeeAnalysis;
 import com.j1987.coffeeroo.domain.JCompany;
 import com.j1987.coffeeroo.domain.JDealer;
 import com.j1987.coffeeroo.domain.JExporter;
 import com.j1987.coffeeroo.domain.JFactory;
+import com.j1987.coffeeroo.domain.JLocalization;
+import com.j1987.coffeeroo.domain.JRole;
+import com.j1987.coffeeroo.domain.JSubmissionForApproval;
 import com.j1987.coffeeroo.domain.JSupplier;
 import com.j1987.coffeeroo.domain.JTour;
+import com.j1987.coffeeroo.domain.JUser;
 import com.j1987.coffeeroo.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -18,10 +23,34 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
+    public Converter<JCoffeeAnalysis, String> ApplicationConversionServiceFactoryBean.getJCoffeeAnalysisToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JCoffeeAnalysis, java.lang.String>() {
+            public String convert(JCoffeeAnalysis jCoffeeAnalysis) {
+                return new StringBuilder().append(jCoffeeAnalysis.getDateOfAnalysis()).append(' ').append(jCoffeeAnalysis.getNumberLading()).append(' ').append(jCoffeeAnalysis.getTruckNumber()).append(' ').append(jCoffeeAnalysis.getNetWeightOfProductAccepted()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JCoffeeAnalysis> ApplicationConversionServiceFactoryBean.getIdToJCoffeeAnalysisConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JCoffeeAnalysis>() {
+            public com.j1987.coffeeroo.domain.JCoffeeAnalysis convert(java.lang.Long id) {
+                return JCoffeeAnalysis.findJCoffeeAnalysis(id);
+            }
+        };
+    }
+    
+    public Converter<String, JCoffeeAnalysis> ApplicationConversionServiceFactoryBean.getStringToJCoffeeAnalysisConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JCoffeeAnalysis>() {
+            public com.j1987.coffeeroo.domain.JCoffeeAnalysis convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JCoffeeAnalysis.class);
+            }
+        };
+    }
+    
     public Converter<JCompany, String> ApplicationConversionServiceFactoryBean.getJCompanyToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JCompany, java.lang.String>() {
             public String convert(JCompany jCompany) {
-                return new StringBuilder().append(jCompany.getName()).append(' ').append(jCompany.getDescription()).toString();
+                return new StringBuilder().append(jCompany.getName()).append(' ').append(jCompany.getNumberCC()).append(' ').append(jCompany.getTaxationRegime()).append(' ').append(jCompany.getTaxCenter()).toString();
             }
         };
     }
@@ -114,6 +143,78 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<JLocalization, String> ApplicationConversionServiceFactoryBean.getJLocalizationToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JLocalization, java.lang.String>() {
+            public String convert(JLocalization jLocalization) {
+                return new StringBuilder().append(jLocalization.getName()).append(' ').append(jLocalization.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JLocalization> ApplicationConversionServiceFactoryBean.getIdToJLocalizationConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JLocalization>() {
+            public com.j1987.coffeeroo.domain.JLocalization convert(java.lang.Long id) {
+                return JLocalization.findJLocalization(id);
+            }
+        };
+    }
+    
+    public Converter<String, JLocalization> ApplicationConversionServiceFactoryBean.getStringToJLocalizationConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JLocalization>() {
+            public com.j1987.coffeeroo.domain.JLocalization convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JLocalization.class);
+            }
+        };
+    }
+    
+    public Converter<JRole, String> ApplicationConversionServiceFactoryBean.getJRoleToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JRole, java.lang.String>() {
+            public String convert(JRole jRole) {
+                return new StringBuilder().append(jRole.getName()).append(' ').append(jRole.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JRole> ApplicationConversionServiceFactoryBean.getIdToJRoleConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JRole>() {
+            public com.j1987.coffeeroo.domain.JRole convert(java.lang.Long id) {
+                return JRole.findJRole(id);
+            }
+        };
+    }
+    
+    public Converter<String, JRole> ApplicationConversionServiceFactoryBean.getStringToJRoleConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JRole>() {
+            public com.j1987.coffeeroo.domain.JRole convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JRole.class);
+            }
+        };
+    }
+    
+    public Converter<JSubmissionForApproval, String> ApplicationConversionServiceFactoryBean.getJSubmissionForApprovalToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JSubmissionForApproval, java.lang.String>() {
+            public String convert(JSubmissionForApproval jSubmissionForApproval) {
+                return new StringBuilder().append(jSubmissionForApproval.getReference()).append(' ').append(jSubmissionForApproval.getDescription()).append(' ').append(jSubmissionForApproval.getCreationDate()).append(' ').append(jSubmissionForApproval.getCreatedBy()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JSubmissionForApproval> ApplicationConversionServiceFactoryBean.getIdToJSubmissionForApprovalConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JSubmissionForApproval>() {
+            public com.j1987.coffeeroo.domain.JSubmissionForApproval convert(java.lang.Long id) {
+                return JSubmissionForApproval.findJSubmissionForApproval(id);
+            }
+        };
+    }
+    
+    public Converter<String, JSubmissionForApproval> ApplicationConversionServiceFactoryBean.getStringToJSubmissionForApprovalConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JSubmissionForApproval>() {
+            public com.j1987.coffeeroo.domain.JSubmissionForApproval convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JSubmissionForApproval.class);
+            }
+        };
+    }
+    
     public Converter<JSupplier, String> ApplicationConversionServiceFactoryBean.getJSupplierToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JSupplier, java.lang.String>() {
             public String convert(JSupplier jSupplier) {
@@ -162,7 +263,34 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<JUser, String> ApplicationConversionServiceFactoryBean.getJUserToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JUser, java.lang.String>() {
+            public String convert(JUser jUser) {
+                return new StringBuilder().append(jUser.getUserName()).append(' ').append(jUser.getFirstName()).append(' ').append(jUser.getLastName()).append(' ').append(jUser.getPhoneNumber()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JUser> ApplicationConversionServiceFactoryBean.getIdToJUserConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JUser>() {
+            public com.j1987.coffeeroo.domain.JUser convert(java.lang.Long id) {
+                return JUser.findJUser(id);
+            }
+        };
+    }
+    
+    public Converter<String, JUser> ApplicationConversionServiceFactoryBean.getStringToJUserConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JUser>() {
+            public com.j1987.coffeeroo.domain.JUser convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JUser.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getJCoffeeAnalysisToStringConverter());
+        registry.addConverter(getIdToJCoffeeAnalysisConverter());
+        registry.addConverter(getStringToJCoffeeAnalysisConverter());
         registry.addConverter(getJCompanyToStringConverter());
         registry.addConverter(getIdToJCompanyConverter());
         registry.addConverter(getStringToJCompanyConverter());
@@ -175,12 +303,24 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getJFactoryToStringConverter());
         registry.addConverter(getIdToJFactoryConverter());
         registry.addConverter(getStringToJFactoryConverter());
+        registry.addConverter(getJLocalizationToStringConverter());
+        registry.addConverter(getIdToJLocalizationConverter());
+        registry.addConverter(getStringToJLocalizationConverter());
+        registry.addConverter(getJRoleToStringConverter());
+        registry.addConverter(getIdToJRoleConverter());
+        registry.addConverter(getStringToJRoleConverter());
+        registry.addConverter(getJSubmissionForApprovalToStringConverter());
+        registry.addConverter(getIdToJSubmissionForApprovalConverter());
+        registry.addConverter(getStringToJSubmissionForApprovalConverter());
         registry.addConverter(getJSupplierToStringConverter());
         registry.addConverter(getIdToJSupplierConverter());
         registry.addConverter(getStringToJSupplierConverter());
         registry.addConverter(getJTourToStringConverter());
         registry.addConverter(getIdToJTourConverter());
         registry.addConverter(getStringToJTourConverter());
+        registry.addConverter(getJUserToStringConverter());
+        registry.addConverter(getIdToJUserConverter());
+        registry.addConverter(getStringToJUserConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

@@ -4,6 +4,9 @@
 package com.j1987.coffeeroo.domain;
 
 import com.j1987.coffeeroo.domain.JCompany;
+import com.j1987.coffeeroo.domain.JUser;
+import java.math.BigDecimal;
+import java.util.List;
 
 privileged aspect JCompany_Roo_JavaBean {
     
@@ -15,12 +18,60 @@ privileged aspect JCompany_Roo_JavaBean {
         this.name = name;
     }
     
+    public String JCompany.getNumberCC() {
+        return this.numberCC;
+    }
+    
+    public void JCompany.setNumberCC(String numberCC) {
+        this.numberCC = numberCC;
+    }
+    
+    public String JCompany.getTaxationRegime() {
+        return this.taxationRegime;
+    }
+    
+    public void JCompany.setTaxationRegime(String taxationRegime) {
+        this.taxationRegime = taxationRegime;
+    }
+    
+    public String JCompany.getTaxCenter() {
+        return this.taxCenter;
+    }
+    
+    public void JCompany.setTaxCenter(String taxCenter) {
+        this.taxCenter = taxCenter;
+    }
+    
+    public BigDecimal JCompany.getCocoaPrice() {
+        return this.cocoaPrice;
+    }
+    
+    public void JCompany.setCocoaPrice(BigDecimal cocoaPrice) {
+        this.cocoaPrice = cocoaPrice;
+    }
+    
+    public BigDecimal JCompany.getCoffeePrice() {
+        return this.coffeePrice;
+    }
+    
+    public void JCompany.setCoffeePrice(BigDecimal coffeePrice) {
+        this.coffeePrice = coffeePrice;
+    }
+    
     public String JCompany.getDescription() {
         return this.description;
     }
     
     public void JCompany.setDescription(String description) {
         this.description = description;
+    }
+    
+    public List<JUser> JCompany.getUsers() {
+        return this.users;
+    }
+    
+    public void JCompany.setUsers(List<JUser> users) {
+        this.users = users;
     }
     
 }

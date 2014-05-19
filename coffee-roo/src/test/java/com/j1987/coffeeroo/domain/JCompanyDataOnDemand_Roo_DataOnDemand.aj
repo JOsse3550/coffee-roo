@@ -5,6 +5,7 @@ package com.j1987.coffeeroo.domain;
 
 import com.j1987.coffeeroo.domain.JCompany;
 import com.j1987.coffeeroo.domain.JCompanyDataOnDemand;
+import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,9 +25,24 @@ privileged aspect JCompanyDataOnDemand_Roo_DataOnDemand {
     
     public JCompany JCompanyDataOnDemand.getNewTransientJCompany(int index) {
         JCompany obj = new JCompany();
+        setCocoaPrice(obj, index);
+        setCoffeePrice(obj, index);
         setDescription(obj, index);
         setName(obj, index);
+        setNumberCC(obj, index);
+        setTaxCenter(obj, index);
+        setTaxationRegime(obj, index);
         return obj;
+    }
+    
+    public void JCompanyDataOnDemand.setCocoaPrice(JCompany obj, int index) {
+        BigDecimal cocoaPrice = BigDecimal.valueOf(index);
+        obj.setCocoaPrice(cocoaPrice);
+    }
+    
+    public void JCompanyDataOnDemand.setCoffeePrice(JCompany obj, int index) {
+        BigDecimal coffeePrice = BigDecimal.valueOf(index);
+        obj.setCoffeePrice(coffeePrice);
     }
     
     public void JCompanyDataOnDemand.setDescription(JCompany obj, int index) {
@@ -37,6 +53,21 @@ privileged aspect JCompanyDataOnDemand_Roo_DataOnDemand {
     public void JCompanyDataOnDemand.setName(JCompany obj, int index) {
         String name = "name_" + index;
         obj.setName(name);
+    }
+    
+    public void JCompanyDataOnDemand.setNumberCC(JCompany obj, int index) {
+        String numberCC = "numberCC_" + index;
+        obj.setNumberCC(numberCC);
+    }
+    
+    public void JCompanyDataOnDemand.setTaxCenter(JCompany obj, int index) {
+        String taxCenter = "taxCenter_" + index;
+        obj.setTaxCenter(taxCenter);
+    }
+    
+    public void JCompanyDataOnDemand.setTaxationRegime(JCompany obj, int index) {
+        String taxationRegime = "taxationRegime_" + index;
+        obj.setTaxationRegime(taxationRegime);
     }
     
     public JCompany JCompanyDataOnDemand.getSpecificJCompany(int index) {

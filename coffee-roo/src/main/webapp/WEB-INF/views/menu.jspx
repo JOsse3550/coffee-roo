@@ -27,5 +27,25 @@
             <menu:item id="i_jdealer_new" messageCode="global_menu_new" url="/jdealers?form" z="92+JT7hoRf6g6A+y2G3QIo3t+PE="/>
             <menu:item id="i_jdealer_list" messageCode="global_menu_list" url="/jdealers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/QbZm08jsVI8SZ87IuybmMHAElw="/>
         </menu:category>
+        <menu:category id="c_jcoffeeanalysis" z="taiUJ/IKeKLBMwFBn/uEs6Wr6sE=">
+            <menu:item id="i_jcoffeeanalysis_new" messageCode="global_menu_new" url="/jcoffeeanalyses?form" z="6rE+lNdoruXUhEhw3MnlKl0f1B4="/>
+            <menu:item id="i_jcoffeeanalysis_list" messageCode="global_menu_list" url="/jcoffeeanalyses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="jz1EBHytR1y/Qv3CMLGPZz55eOQ="/>
+        </menu:category>
+        <menu:category id="c_jrole" z="1LXypr9uA2Y0sUZ6naaQz6QkDNQ=">
+            <menu:item id="i_jrole_new" messageCode="global_menu_new" url="/jroles?form" z="Ua9OLd+dWN1dhTIgVpg9xBdaAm8="/>
+            <menu:item id="i_jrole_list" messageCode="global_menu_list" url="/jroles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kPCkucx1ezIslNaWUj6yAeo+yTo="/>
+        </menu:category>
+        <menu:category id="c_juser" z="zPfbJxGDYoTggFCqSI5PcP28wvw=">
+            <menu:item id="i_juser_new" messageCode="global_menu_new" url="/jusers?form" z="HF6035uEZl4582/802l4lQHDIdk="/>
+            <menu:item id="i_juser_list" messageCode="global_menu_list" url="/jusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="j5DCIt2x7hIKeg1q7+l+fzKNWo4="/>
+        </menu:category>
+        <menu:category id="c_jlocalization" z="8y/FWR8iiEOrCRhtSlUgOpCt1e0=">
+            <menu:item id="i_jlocalization_new" messageCode="global_menu_new" url="/jlocalizations?form" z="Q4NQJaAkw3w5SyEyQB3s3y6s5mM="/>
+            <menu:item id="i_jlocalization_list" messageCode="global_menu_list" url="/jlocalizations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4JJkvw4DWmhIGlZdS6DDARyiTYk="/>
+        </menu:category>
+        <menu:category id="c_jsubmissionforapproval" z="QDdSfGRwSfGfAW7bbq662h3p7Ag=">
+            <menu:item id="i_jsubmissionforapproval_new" messageCode="global_menu_new" url="/jsubmissionforapprovals?form" z="UROUoNuH8eJtifrnX6Fq5Iaak7k="/>
+            <menu:item id="i_jsubmissionforapproval_list" messageCode="global_menu_list" url="/jsubmissionforapprovals?page=1&amp;size=${empty param.size ? 10 : param.size}" z="R4ccxiN07kpDkD0xzkwEb77hnXw="/>
+        </menu:category>
     </menu:menu>
 </div>
