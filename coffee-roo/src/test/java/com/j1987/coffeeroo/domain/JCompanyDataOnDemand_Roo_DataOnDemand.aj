@@ -24,8 +24,14 @@ privileged aspect JCompanyDataOnDemand_Roo_DataOnDemand {
     
     public JCompany JCompanyDataOnDemand.getNewTransientJCompany(int index) {
         JCompany obj = new JCompany();
+        setDescription(obj, index);
         setName(obj, index);
         return obj;
+    }
+    
+    public void JCompanyDataOnDemand.setDescription(JCompany obj, int index) {
+        String description = "description_" + index;
+        obj.setDescription(description);
     }
     
     public void JCompanyDataOnDemand.setName(JCompany obj, int index) {

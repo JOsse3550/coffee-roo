@@ -7,5 +7,25 @@
             <menu:item id="i_jcompany_new" messageCode="global_menu_new" url="/jcompanys?form" z="2jwrcIbBDQCCryVvzjkNhr4cI7U="/>
             <menu:item id="i_jcompany_list" messageCode="global_menu_list" url="/jcompanys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/ryd+UDXYsWXxKRHFCk+Rb9jGNc="/>
         </menu:category>
+        <menu:category id="c_jexporter" z="/th8vBHTxlByehWcZ1Cvmk3/crA=">
+            <menu:item id="i_jexporter_new" messageCode="global_menu_new" url="/jexporters?form" z="/l6cJl5D8WQr97l07YsB9Ig0LUQ="/>
+            <menu:item id="i_jexporter_list" messageCode="global_menu_list" url="/jexporters?page=1&amp;size=${empty param.size ? 10 : param.size}" z="c+GgOSx+IKgmYb7IA5e16NSVsKE="/>
+        </menu:category>
+        <menu:category id="c_jfactory" z="CFd7hVL3jtbjl6ju6J1fBk9e0OY=">
+            <menu:item id="i_jfactory_new" messageCode="global_menu_new" url="/jfactorys?form" z="a2r7YEeml7FmFcgIvyMjIMB/z6E="/>
+            <menu:item id="i_jfactory_list" messageCode="global_menu_list" url="/jfactorys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="URRd7avga+fZz851pWuxat1xgCg="/>
+        </menu:category>
+        <menu:category id="c_jtour" z="lP50Dac9MtOWtGuQavnzafFY5Yc=">
+            <menu:item id="i_jtour_new" messageCode="global_menu_new" url="/jtours?form" z="WCpp6LFkflP2jcJ8Oo4mxbp4oQc="/>
+            <menu:item id="i_jtour_list" messageCode="global_menu_list" url="/jtours?page=1&amp;size=${empty param.size ? 10 : param.size}" z="BPVo1Mm4TbkfBh9fw40Ow1A3WEQ="/>
+        </menu:category>
+        <menu:category id="c_jsupplier" z="kDjdFKKgPnSJpcfzz18EwWoHCKE=">
+            <menu:item id="i_jsupplier_new" messageCode="global_menu_new" url="/jsuppliers?form" z="MHyayzvcqjLBCTRsxJHaQbe4vIg="/>
+            <menu:item id="i_jsupplier_list" messageCode="global_menu_list" url="/jsuppliers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Zb0S4Y1g3V18jNjFP144GtTNAyw="/>
+        </menu:category>
+        <menu:category id="c_jdealer" z="+OAq8XgeGAYRnMuMYBjTkWAKc48=">
+            <menu:item id="i_jdealer_new" messageCode="global_menu_new" url="/jdealers?form" z="92+JT7hoRf6g6A+y2G3QIo3t+PE="/>
+            <menu:item id="i_jdealer_list" messageCode="global_menu_list" url="/jdealers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/QbZm08jsVI8SZ87IuybmMHAElw="/>
+        </menu:category>
     </menu:menu>
 </div>

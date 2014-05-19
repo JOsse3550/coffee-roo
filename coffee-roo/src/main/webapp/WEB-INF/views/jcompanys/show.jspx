@@ -4,5 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_j1987_coffeeroo_domain_JCompany" object="${jcompany_}" path="/jcompanys" z="Ge7+R8cOWOaXKie6llHJrIwARHY=">
         <field:display field="name" id="s_com_j1987_coffeeroo_domain_JCompany_name" object="${jcompany_}" z="+je5SWc2GI7PsfZXjbfaoGao1aI="/>
+        <field:display field="description" id="s_com_j1987_coffeeroo_domain_JCompany_description" object="${jcompany_}" z="+amUsvsSEpkG9yiR7KBwSvl64U4="/>
     </page:show>
 </div>

@@ -4,6 +4,11 @@
 package com.j1987.coffeeroo.web;
 
 import com.j1987.coffeeroo.domain.JCompany;
+import com.j1987.coffeeroo.domain.JDealer;
+import com.j1987.coffeeroo.domain.JExporter;
+import com.j1987.coffeeroo.domain.JFactory;
+import com.j1987.coffeeroo.domain.JSupplier;
+import com.j1987.coffeeroo.domain.JTour;
 import com.j1987.coffeeroo.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -16,7 +21,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<JCompany, String> ApplicationConversionServiceFactoryBean.getJCompanyToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JCompany, java.lang.String>() {
             public String convert(JCompany jCompany) {
-                return new StringBuilder().append(jCompany.getName()).toString();
+                return new StringBuilder().append(jCompany.getName()).append(' ').append(jCompany.getDescription()).toString();
             }
         };
     }
@@ -37,10 +42,145 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<JDealer, String> ApplicationConversionServiceFactoryBean.getJDealerToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JDealer, java.lang.String>() {
+            public String convert(JDealer jDealer) {
+                return new StringBuilder().append(jDealer.getCode()).append(' ').append(jDealer.getName()).append(' ').append(jDealer.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JDealer> ApplicationConversionServiceFactoryBean.getIdToJDealerConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JDealer>() {
+            public com.j1987.coffeeroo.domain.JDealer convert(java.lang.Long id) {
+                return JDealer.findJDealer(id);
+            }
+        };
+    }
+    
+    public Converter<String, JDealer> ApplicationConversionServiceFactoryBean.getStringToJDealerConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JDealer>() {
+            public com.j1987.coffeeroo.domain.JDealer convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JDealer.class);
+            }
+        };
+    }
+    
+    public Converter<JExporter, String> ApplicationConversionServiceFactoryBean.getJExporterToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JExporter, java.lang.String>() {
+            public String convert(JExporter jExporter) {
+                return new StringBuilder().append(jExporter.getCode()).append(' ').append(jExporter.getName()).append(' ').append(jExporter.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JExporter> ApplicationConversionServiceFactoryBean.getIdToJExporterConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JExporter>() {
+            public com.j1987.coffeeroo.domain.JExporter convert(java.lang.Long id) {
+                return JExporter.findJExporter(id);
+            }
+        };
+    }
+    
+    public Converter<String, JExporter> ApplicationConversionServiceFactoryBean.getStringToJExporterConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JExporter>() {
+            public com.j1987.coffeeroo.domain.JExporter convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JExporter.class);
+            }
+        };
+    }
+    
+    public Converter<JFactory, String> ApplicationConversionServiceFactoryBean.getJFactoryToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JFactory, java.lang.String>() {
+            public String convert(JFactory jFactory) {
+                return new StringBuilder().append(jFactory.getCode()).append(' ').append(jFactory.getName()).append(' ').append(jFactory.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JFactory> ApplicationConversionServiceFactoryBean.getIdToJFactoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JFactory>() {
+            public com.j1987.coffeeroo.domain.JFactory convert(java.lang.Long id) {
+                return JFactory.findJFactory(id);
+            }
+        };
+    }
+    
+    public Converter<String, JFactory> ApplicationConversionServiceFactoryBean.getStringToJFactoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JFactory>() {
+            public com.j1987.coffeeroo.domain.JFactory convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JFactory.class);
+            }
+        };
+    }
+    
+    public Converter<JSupplier, String> ApplicationConversionServiceFactoryBean.getJSupplierToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JSupplier, java.lang.String>() {
+            public String convert(JSupplier jSupplier) {
+                return new StringBuilder().append(jSupplier.getCode()).append(' ').append(jSupplier.getName()).append(' ').append(jSupplier.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JSupplier> ApplicationConversionServiceFactoryBean.getIdToJSupplierConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JSupplier>() {
+            public com.j1987.coffeeroo.domain.JSupplier convert(java.lang.Long id) {
+                return JSupplier.findJSupplier(id);
+            }
+        };
+    }
+    
+    public Converter<String, JSupplier> ApplicationConversionServiceFactoryBean.getStringToJSupplierConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JSupplier>() {
+            public com.j1987.coffeeroo.domain.JSupplier convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JSupplier.class);
+            }
+        };
+    }
+    
+    public Converter<JTour, String> ApplicationConversionServiceFactoryBean.getJTourToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.j1987.coffeeroo.domain.JTour, java.lang.String>() {
+            public String convert(JTour jTour) {
+                return new StringBuilder().append(jTour.getName()).append(' ').append(jTour.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, JTour> ApplicationConversionServiceFactoryBean.getIdToJTourConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.j1987.coffeeroo.domain.JTour>() {
+            public com.j1987.coffeeroo.domain.JTour convert(java.lang.Long id) {
+                return JTour.findJTour(id);
+            }
+        };
+    }
+    
+    public Converter<String, JTour> ApplicationConversionServiceFactoryBean.getStringToJTourConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.j1987.coffeeroo.domain.JTour>() {
+            public com.j1987.coffeeroo.domain.JTour convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), JTour.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getJCompanyToStringConverter());
         registry.addConverter(getIdToJCompanyConverter());
         registry.addConverter(getStringToJCompanyConverter());
+        registry.addConverter(getJDealerToStringConverter());
+        registry.addConverter(getIdToJDealerConverter());
+        registry.addConverter(getStringToJDealerConverter());
+        registry.addConverter(getJExporterToStringConverter());
+        registry.addConverter(getIdToJExporterConverter());
+        registry.addConverter(getStringToJExporterConverter());
+        registry.addConverter(getJFactoryToStringConverter());
+        registry.addConverter(getIdToJFactoryConverter());
+        registry.addConverter(getStringToJFactoryConverter());
+        registry.addConverter(getJSupplierToStringConverter());
+        registry.addConverter(getIdToJSupplierConverter());
+        registry.addConverter(getStringToJSupplierConverter());
+        registry.addConverter(getJTourToStringConverter());
+        registry.addConverter(getIdToJTourConverter());
+        registry.addConverter(getStringToJTourConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
