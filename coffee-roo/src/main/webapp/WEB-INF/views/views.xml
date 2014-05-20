@@ -2,23 +2,36 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
 
-  <definition extends="default" name="index">
-    <put-attribute name="body" value="/WEB-INF/views/index.jspx"/>
+  <definition extends="simpleLayout" name="index">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/index.jspx"/>
   </definition>
 
-  <definition extends="public" name="dataAccessFailure">
-    <put-attribute name="body" value="/WEB-INF/views/dataAccessFailure.jspx"/>
+  <definition extends="simpleLayout" name="dataAccessFailure">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/dataAccessFailure.jspx"/>
   </definition>
 
-  <definition extends="public" name="resourceNotFound">
-    <put-attribute name="body" value="/WEB-INF/views/resourceNotFound.jspx"/>
+  <definition extends="simpleLayout" name="resourceNotFound">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/resourceNotFound.jspx"/>
   </definition>
 
-  <definition extends="public" name="uncaughtException">
-    <put-attribute name="body" value="/WEB-INF/views/uncaughtException.jspx"/>
+  <definition extends="simpleLayout" name="uncaughtException">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/uncaughtException.jspx"/>
+  </definition>
+  
+  <definition extends="dashboardLayout" name="administration/index">
+  	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/administration/header.jspx"/>
+  	<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/administration/menu.jspx"/>
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/administration/index.jspx"/>
+  </definition>
+  
+  <definition extends="dashboardLayout" name="workbench/index">
+   	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/workbench/header.jspx"/>
+  	<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/workbench/menu.jspx"/>
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/workbench/index.jspx"/>
   </definition>
 
-<definition extends="public" name="login">
-        <put-attribute name="body" value="/WEB-INF/views/login.jspx"/>
-    </definition>
+  <definition extends="loginLayout" name="login">
+       <put-attribute name="body" value="/WEB-INF/views/coffee-roo/login.jspx"/>
+  </definition>
+  
 </tiles-definitions>
