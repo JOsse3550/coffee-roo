@@ -1,9 +1,12 @@
 package com.j1987.coffeeroo.domain;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -47,4 +50,9 @@ public class JCompany {
      */
     @ManyToMany
     private List<JUser> users = new ArrayList<JUser>();
+    
+    /**
+     */
+    @OneToMany
+    private Set<JFactory> factories = new HashSet<JFactory>();
 }

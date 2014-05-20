@@ -3,6 +3,7 @@
 
 package com.j1987.coffeeroo.web;
 
+import com.j1987.coffeeroo.domain.JCompany;
 import com.j1987.coffeeroo.domain.JFactory;
 import com.j1987.coffeeroo.web.JFactoryController;
 import java.io.UnsupportedEncodingException;
@@ -86,6 +87,7 @@ privileged aspect JFactoryController_Roo_Controller {
     
     void JFactoryController.populateEditForm(Model uiModel, JFactory JFactory_) {
         uiModel.addAttribute("JFactory_", JFactory_);
+        uiModel.addAttribute("jcompanys", JCompany.findAllJCompanys());
     }
     
     String JFactoryController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

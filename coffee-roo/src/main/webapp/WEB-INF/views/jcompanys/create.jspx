@@ -11,6 +11,7 @@
         <field:input field="taxCenter" id="c_com_j1987_coffeeroo_domain_JCompany_taxCenter" z="uWxtR/ChTVj93gnEDmwFnVr9yB8="/>
         <field:input field="cocoaPrice" id="c_com_j1987_coffeeroo_domain_JCompany_cocoaPrice" validationMessageCode="field_invalid_number" z="qCXBQNx9REeoVF0Cq3/3myPTYD4="/>
         <field:input field="coffeePrice" id="c_com_j1987_coffeeroo_domain_JCompany_coffeePrice" validationMessageCode="field_invalid_number" z="twv15XuY4JSJCfXECazhC/OFQ9s="/>
+        <field:simple field="factories" id="c_com_j1987_coffeeroo_domain_JCompany_factories" messageCode="entity_reference_not_managed" messageCodeAttribute="J Factory" z="OGby12geDg9Fe9D7O+70Qma4+uk="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_j1987_coffeeroo_domain_JCompany" render="${not empty dependencies}" z="rmqTxDFrc3LbSmq4GOJRzYFYtMo="/>
 </div>

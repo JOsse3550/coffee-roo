@@ -6,5 +6,6 @@
         <field:display field="code" id="s_com_j1987_coffeeroo_domain_JFactory_code" object="${jfactory_}" z="2DMe5mlyfvfRyLTQzjpiM8HJ+IU="/>
         <field:display field="name" id="s_com_j1987_coffeeroo_domain_JFactory_name" object="${jfactory_}" z="MBwW8SZg63cN0LaDlkbSNxrF2cI="/>
         <field:display field="description" id="s_com_j1987_coffeeroo_domain_JFactory_description" object="${jfactory_}" z="4z0i3PelBlrtOb8xE50YQGoVqoA="/>
+        <field:display field="company" id="s_com_j1987_coffeeroo_domain_JFactory_company" object="${jfactory_}" z="fT7UR0ElC44u3+BDxvBiMUuB5cY="/>
     </page:show>
 </div>

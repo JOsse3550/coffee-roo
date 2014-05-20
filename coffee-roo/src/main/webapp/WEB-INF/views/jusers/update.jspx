@@ -9,11 +9,11 @@
         <field:input field="phoneNumber" id="c_com_j1987_coffeeroo_domain_JUser_phoneNumber" z="YB0npndxjgz1t7Okce4sNJaF3GY="/>
         <field:input field="email" id="c_com_j1987_coffeeroo_domain_JUser_email" validationMessageCode="field_invalid_email" z="IidVBHjyld6RnWHYASI4nWGEQjg="/>
         <field:input field="roleName" id="c_com_j1987_coffeeroo_domain_JUser_roleName" z="i5Jw8Md+2/NubjpXTcf4chzqgGA="/>
-        <field:input field="activityNames" id="c_com_j1987_coffeeroo_domain_JUser_activityNames" z="pLGhnMc9F1mIbiMCLQm3G0hRENU="/>
         <field:select field="roles" id="c_com_j1987_coffeeroo_domain_JUser_roles" itemValue="id" items="${jroles}" multiple="true" path="/jroles" z="UpgldeCPs0kFpa+nE7ECrNyicIc="/>
         <field:select field="companies" id="c_com_j1987_coffeeroo_domain_JUser_companies" itemValue="id" items="${jcompanys}" multiple="true" path="/jcompanys" z="WB5/JF+KiGXjtYTbb8cwSI/jEkU="/>
         <field:select field="factories" id="c_com_j1987_coffeeroo_domain_JUser_factories" itemValue="id" items="${jfactorys}" multiple="true" path="/jfactorys" z="x7zOJjd0gVWCyqM13Dy1Sals9DA="/>
         <field:input field="password" id="c_com_j1987_coffeeroo_domain_JUser_password" required="true" z="GhM7zIGSjc827e5jpX6CjdPriCs="/>
         <field:input field="confirmPassword" id="c_com_j1987_coffeeroo_domain_JUser_confirmPassword" z="Xm4acDxs1s5YqdwLC5xtBJZCt5U="/>
+        <field:input field="factoryNames" id="c_com_j1987_coffeeroo_domain_JUser_factoryNames" z="Og0nFxcYFd+ja7J3xrkqW6gIaj4="/>
     </form:update>
 </div>

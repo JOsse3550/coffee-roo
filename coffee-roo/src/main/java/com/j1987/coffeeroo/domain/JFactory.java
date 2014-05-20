@@ -4,6 +4,7 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @RooJavaBean
@@ -25,4 +26,9 @@ public class JFactory {
     /**
      */
     private String description;
+    
+    /**
+     */
+    @ManyToOne
+    private JCompany company;
 }

@@ -7,6 +7,7 @@
             <table:column id="c_com_j1987_coffeeroo_domain_JFactory_code" property="code" z="qvlefUJXBghlD4fLQ09xW4YZ578="/>
             <table:column id="c_com_j1987_coffeeroo_domain_JFactory_name" property="name" z="pu7R0dRoZ5+KjwbcU+wT91+soYU="/>
             <table:column id="c_com_j1987_coffeeroo_domain_JFactory_description" property="description" z="i78VlIA2cWYPGsnV3eb8tgBsO1I="/>
+            <table:column id="c_com_j1987_coffeeroo_domain_JFactory_company" property="company" z="K/B9m61dUaN5YgBYtjSmMgMWoD4="/>
         </table:table>
     </page:list>
 </div>

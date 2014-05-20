@@ -59,12 +59,12 @@ privileged aspect JUser_Roo_JavaBean {
         this.roleName = roleName;
     }
     
-    public String JUser.getActivityNames() {
-        return this.activityNames;
+    public String JUser.getFactoryNames() {
+        return this.factoryNames;
     }
     
-    public void JUser.setActivityNames(String activityNames) {
-        this.activityNames = activityNames;
+    public void JUser.setFactoryNames(String factoryNames) {
+        this.factoryNames = factoryNames;
     }
     
     public List<JRole> JUser.getRoles() {

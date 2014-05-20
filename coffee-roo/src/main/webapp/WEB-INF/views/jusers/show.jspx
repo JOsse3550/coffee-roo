@@ -9,11 +9,11 @@
         <field:display field="phoneNumber" id="s_com_j1987_coffeeroo_domain_JUser_phoneNumber" object="${juser_}" z="LK9N9OTKPLFdFPhtIZ8Cy9H2de4="/>
         <field:display field="email" id="s_com_j1987_coffeeroo_domain_JUser_email" object="${juser_}" z="o5skICG9Xb3WscpZJiS/hcqZ62Q="/>
         <field:display field="roleName" id="s_com_j1987_coffeeroo_domain_JUser_roleName" object="${juser_}" z="Jzi4LaDTU6DSFRhq4Q5cpNO4Tzo="/>
-        <field:display field="activityNames" id="s_com_j1987_coffeeroo_domain_JUser_activityNames" object="${juser_}" z="gCutJHDKispB9bBj4VfL30u15BA="/>
         <field:display field="roles" id="s_com_j1987_coffeeroo_domain_JUser_roles" object="${juser_}" z="5NWrMz9sJ/oZnLtclZpJVFqDFOg="/>
         <field:display field="companies" id="s_com_j1987_coffeeroo_domain_JUser_companies" object="${juser_}" z="nh8EEycpjM4uAB6NaKKFPAHKFhU="/>
         <field:display field="factories" id="s_com_j1987_coffeeroo_domain_JUser_factories" object="${juser_}" z="dLy0sIjJdYo+5zLQdifyv/O2XN8="/>
         <field:display field="password" id="s_com_j1987_coffeeroo_domain_JUser_password" object="${juser_}" z="DDENC7u2BCqtpW/bJbbGwfdnPWI="/>
         <field:display field="confirmPassword" id="s_com_j1987_coffeeroo_domain_JUser_confirmPassword" object="${juser_}" z="Bjgeo+y7ZFuj7OnQwwoDEYVqyP8="/>
+        <field:display field="factoryNames" id="s_com_j1987_coffeeroo_domain_JUser_factoryNames" object="${juser_}" z="gMDSUK95oQdwWY4UbQrsLB0Dmjo="/>
     </page:show>
 </div>

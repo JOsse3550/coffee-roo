@@ -3,6 +3,7 @@
 
 package com.j1987.coffeeroo.domain;
 
+import com.j1987.coffeeroo.domain.JCompany;
 import com.j1987.coffeeroo.domain.JFactory;
 
 privileged aspect JFactory_Roo_JavaBean {
@@ -29,6 +30,14 @@ privileged aspect JFactory_Roo_JavaBean {
     
     public void JFactory.setDescription(String description) {
         this.description = description;
+    }
+    
+    public JCompany JFactory.getCompany() {
+        return this.company;
+    }
+    
+    public void JFactory.setCompany(JCompany company) {
+        this.company = company;
     }
     
 }

@@ -41,7 +41,7 @@ public class JUser {
     private String roleName;
     
     @Transient
-    private String activityNames;
+    private String factoryNames;
 
     @ManyToMany
     private List<JRole> roles = new ArrayList<JRole>();
