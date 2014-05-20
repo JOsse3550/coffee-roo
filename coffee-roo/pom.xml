@@ -16,6 +16,7 @@
     <jasperreports.version>5.0.1</jasperreports.version>
     <jasperreportsfonts.version>4.0.0</jasperreportsfonts.version>
     <apachepoi.version>3.9</apachepoi.version>
+    <spring-security.version>3.1.0.RELEASE</spring-security.version>
     </properties>
     <repositories>
         <repository>
@@ -62,6 +63,14 @@
         </pluginRepository>
     </pluginRepositories>
     <dependencies>
+    
+        <dependency>
+        	<groupId>org.apache.ant</groupId>
+        	<artifactId>ant</artifactId>
+        	<version>1.8.4</version>
+        </dependency>
+    
+    
         <!-- General dependencies for standard applications -->
         <dependency>
             <groupId>junit</groupId>
@@ -284,10 +293,10 @@
             <artifactId>jasperreports</artifactId>
             <version>${jasperreports.version}</version>
             <exclusions>
-                <exclusion>
+                <!-- <exclusion>
                     <groupId>commons-collections</groupId>
                     <artifactId>commons-collections</artifactId>
-                </exclusion>
+                </exclusion> -->
             </exclusions>
         </dependency>
         <dependency>
@@ -299,6 +308,38 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
             <version>${jasperreportsfonts.version}</version>
+        </dependency>
+    <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring-security.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring-security.version}</version>
         </dependency>
     </dependencies>
     <build>
