@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+  <definition extends="simpleLayout" name="index">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/index.jspx"/>
+  </definition>
+
+  <definition extends="simpleLayout" name="dataAccessFailure">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/dataAccessFailure.jspx"/>
+  </definition>
+
+  <definition extends="simpleLayout" name="resourceNotFound">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/resourceNotFound.jspx"/>
+  </definition>
+
+  <definition extends="simpleLayout" name="uncaughtException">
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/uncaughtException.jspx"/>
+  </definition>
+  
+  <definition extends="dashboardLayout" name="administration">
+  	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/administration/header.jspx"/>
+  	<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/administration/menu.jspx"/>
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/administration/index.jspx"/>
+  </definition>
+  
+  <definition extends="dashboardLayout" name="workbench">
+   	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/workbench/header.jspx"/>
+  	<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/workbench/menu.jspx"/>
+    <put-attribute name="body" value="/WEB-INF/views/coffee-roo/workbench/index.jspx"/>
+  </definition>
+
+  <definition extends="loginLayout" name="login">
+       <put-attribute name="body" value="/WEB-INF/views/coffee-roo/login.jspx"/>
+  </definition>
+  
+</tiles-definitions>

@@ -32,10 +32,11 @@ public class JUtils {
 	private static final String DB_UI_ROLE_FACTORY_AGENT = "AGENT";
 	
 	public static final String HTTP_SESSION_FACTORY_CODE = "userFactoryCode";
-	public static final String HTTP_SESSION_FACTORY_NAME = "userFactoryCode";
+	public static final String HTTP_SESSION_FACTORY_NAME = "userFactoryName";
 	
 	public static final String HTTP_SESSION_COMPANY_CODE = "userCompanyCode";
 	public static final String HTTP_SESSION_COMPANY_NAME =  "userCompanyName";
+	public static final String HTTP_SESSION_USER_ROLE = "userRole";
 
 	public JUtils() {
 		// TODO Auto-generated constructor stub

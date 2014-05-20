@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    
+	<definition extends="dashboardLayout" name="administration/company/show">
+	   	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/administration/header.jspx"/>
+  		<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/administration/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/coffee-roo/administration/company/show.jspx"/>
+    </definition>
+    
+	<definition extends="dashboardLayout" name="administration/company/update">
+	   	<put-attribute name="header" value="/WEB-INF/views/coffee-roo/administration/header.jspx"/>
+  		<put-attribute name="menu" value="/WEB-INF/views/coffee-roo/administration/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/coffee-roo/administration/company/update.jspx"/>
+    </definition>
+
+</tiles-definitions>

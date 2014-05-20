@@ -15,5 +15,19 @@
     <put-attribute name="header" value="/WEB-INF/views/header.jspx" />
     <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
   </definition>
+  
+  <definition name="simpleLayout" template="/WEB-INF/layouts/dashboardLayout.jspx">
+    <put-attribute name="header" value="/WEB-INF/views/coffee-roo/header.jspx" />
+    <put-attribute name="menu" value="/WEB-INF/views/coffee-roo/menu.jspx" />
+  </definition>
+  
+  <definition name="dashboardLayout" template="/WEB-INF/layouts/dashboardLayout.jspx">
+    <put-attribute name="header" value="/WEB-INF/views/coffee-roo/header.jspx" />
+    <put-attribute name="menu" value="/WEB-INF/views/coffee-roo/menu.jspx" />
+  </definition>
+  
+  <definition name="loginLayout" template="/WEB-INF/layouts/loginLayout.jspx">
+    <put-attribute name="body" value="/WEB-INF/views/header.jspx" />
+  </definition>
 
 </tiles-definitions>

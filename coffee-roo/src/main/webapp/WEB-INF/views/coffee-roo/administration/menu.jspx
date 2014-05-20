@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	 xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	 
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <spring:url value="/administration/basesettings/details" var="generalsettings_details_url"/>
+    <spring:url value="/administration/factories/list?size=10" var="factorylist_url"/>
+    <spring:url value="/administration/users/list?size=10" var="userslist_url" />
+    <spring:url value="/administration/exporters/list?size=10" var="exporterslist_url" />
+    <spring:url value="/administration/tours/list?size=10" var="tourslist_url" />
+    <spring:url value="/administration/suppliers/list?size=10" var="supplierslist_url" />
+    <spring:url value="/administration/localizations/list?size=10" var="localizationslist_url" />
+    <spring:url value="/administration/dealers/list?size=10" var="dealerslist_url" />
+    
+    <spring:url value="/administration/auditlogs/connections/list?size=10" var="auditlogs_connectionslist_url" />
+    <spring:url value="/administration/auditlogs/settings/list?size=10" var="auditlogs_settingslist_url" />
+    <spring:url value="/administration/auditlogs/analysis/list?size=10" var="auditlogs_analysislist_url" />
+    <spring:url value="/administration/auditlogs/submissions/list?size=10" var="auditlogs_submissionslist_url" />
+    
+    <div class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+               <li>
+	              <a href="${generalsettings_details_url}">
+	              	<spring:message code="administration_baseinformations"/>
+	               	<span class="fa fa-dashboard fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${localizationslist_url}">
+	              	<spring:message code="menu_item_jlocalization_list_label"/>
+	               	<span class="fa fa-road fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${tourslist_url}">
+	              	<spring:message code="menu_item_jtour_list_label"/>
+	               	<span class="fa fa-folder fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${factorylist_url}">
+	              	<spring:message code="menu_item_jfactory_list_label"/>
+	               	<span class="fa fa-sitemap fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${dealerslist_url}">
+	              	<spring:message code="menu_item_jdealer_list_label"/>
+	               	<span class="fa fa-flag fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${exporterslist_url}">
+	              	<spring:message code="menu_item_jexporter_list_label"/>
+	               	<span class="fa fa-building fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${supplierslist_url}">
+	              	<spring:message code="menu_item_jsupplier_list_label"/>
+	               	<span class="fa fa-magic fa-fw"></span> 
+	              </a>
+	          </li>
+              <li>
+	              <a href="${userslist_url}">
+	              	<spring:message code="menu_item_juser_list_label"/>
+	               	<span class="fa fa-user fa-fw"></span> 
+	              </a>
+	          </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

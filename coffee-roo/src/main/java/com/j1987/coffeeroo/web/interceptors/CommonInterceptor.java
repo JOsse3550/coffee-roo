@@ -70,6 +70,8 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 								user = users.get(0);
 							}
 							
+							session.setAttribute(JUtils.HTTP_SESSION_USER_ROLE, user.getRoleName());
+							
 							//Retrieves the factory of current MANAGER
 							List<JFactory> factories = user.getFactories();
 							
@@ -95,6 +97,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 								}
 							}
 							
+							
 						}
 						
 					}else if(JUtils.DB_ROLE_ADMIN.equals(authority.getAuthority())){
@@ -103,12 +106,15 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 						HttpSession session = request.getSession();
 						if (session != null && (session.getAttribute(JUtils.HTTP_SESSION_COMPANY_CODE) == null)) {
 							
+							
 							logger.debug("preHandle() - setting 'userCompanyCode' attribute to the session");
 							if (user == null) {
 								List<JUser> users = userService.findUserByUserNameEquals(authUser);
 								user = users.get(0);
 							}
 
+							session.setAttribute(JUtils.HTTP_SESSION_USER_ROLE, user.getRoleName());
+							
 							//Retrieves the companies of current SUPERVISOR
 							List<JCompany> companies = user.getCompanies();
 							
@@ -127,6 +133,8 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 							}
 							
 						}
+						
+						
 						
 					}
 					
