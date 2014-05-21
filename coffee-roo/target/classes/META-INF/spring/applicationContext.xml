@@ -47,6 +47,7 @@
         <context:exclude-filter expression=".*_Roo_.*" type="regex"/>
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
+    
     <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
         <property name="driverClassName" value="${database.driverClassName}"/>
         <property name="url" value="${database.url}"/>
@@ -60,12 +61,31 @@
         <property name="minEvictableIdleTimeMillis" value="1800000"/>
         <property name="validationQuery" value="SELECT 1"/>
     </bean>
+    
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
+    
     <tx:annotation-driven mode="aspectj" transaction-manager="transactionManager"/>
+    
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    
+    <bean id="propertiesService" class="com.j1987.coffeeroo.framework.properties.PropertiesService">
+    	<property name="passwordEncoding" value="${password.encoding}"/>
+    	<property name="dbDriverClassName" value="${database.driverClassName}"/>
+    	<property name="dbURL" value="${database.url}"/>
+    	<property name="dbUserName" value="${database.username}"/>
+    	<property name="dbPassword" value="${database.password}"/>
+    	<property name="sqlScript" value="${sql.script}"/>
+   </bean>
+    
+    <bean id="userService" class="com.j1987.coffeeroo.services.dao.UserServiceImpl" />
+    <bean id="companyService" class="com.j1987.coffeeroo.services.dao.CompanyServiceImpl" />
+    <bean id="factoryService" class="com.j1987.coffeeroo.services.dao.FactoryServiceImpl" />
+    <bean id="localizationService" class="com.j1987.coffeeroo.services.dao.LocalizationServiceImpl" />
+    <bean id="tourService" class="com.j1987.coffeeroo.services.dao.TourServiceImpl" />
+    <bean id="securityService" class="com.j1987.coffeeroo.services.security.JSecurityServiceImpl"/>
 </beans>
