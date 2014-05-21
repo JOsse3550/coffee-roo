@@ -2,6 +2,7 @@
   <jsp:output omit-xml-declaration="yes" />
 
   <jsp:directive.attribute name="id" type="java.lang.String" required="true" rtexprvalue="true" description="The identifier for this tag (do not change!)" />
+  <jsp:directive.attribute name="path" type="java.lang.String" required="true" rtexprvalue="true" description="Specify the relative URL path (with leading /)" />
   <jsp:directive.attribute name="items" type="java.util.Collection" required="true" rtexprvalue="true" description="The form backing object name" />
   <jsp:directive.attribute name="label" type="java.lang.String" required="false" rtexprvalue="true" description="The label used for this object, will default to a message bundle if not supplied" />
   <jsp:directive.attribute name="labelPlural" type="java.lang.String" required="false" rtexprvalue="true" description="The label used for this object, will default to a message bundle if not supplied" />
@@ -21,7 +22,8 @@
     	${labelPlural}
     </h1>
     <p>
-    	<a href="${path}/create?form" class="btn btn-primary">
+    	<spring:url value="${path}/create?form" var="create_form_url" />
+    	<a href="${create_form_url}" class="btn btn-primary">
     		<spring:message code="entity_create" arguments="${label}" />
     	</a>
     </p>
@@ -40,7 +42,12 @@
 	          </div>
 	        </c:otherwise>
 	      </c:choose>
-	      </div>
+      </div>
+      <div class="panel-footer">
+         <span>
+         	<spring:message code="global_sponsored"/>
+         </span>
+       </div>
 	</div>
   </c:if>
 </jsp:root>

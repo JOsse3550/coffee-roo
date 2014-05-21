@@ -84,5 +84,8 @@
     
     <bean id="userService" class="com.j1987.coffeeroo.services.dao.UserServiceImpl" />
     <bean id="companyService" class="com.j1987.coffeeroo.services.dao.CompanyServiceImpl" />
+    <bean id="factoryService" class="com.j1987.coffeeroo.services.dao.FactoryServiceImpl" />
+    <bean id="localizationService" class="com.j1987.coffeeroo.services.dao.LocalizationServiceImpl" />
+    <bean id="tourService" class="com.j1987.coffeeroo.services.dao.TourServiceImpl" />
     <bean id="securityService" class="com.j1987.coffeeroo.services.security.JSecurityServiceImpl"/>
 </beans>

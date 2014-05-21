@@ -50,8 +50,9 @@
     <div class="btn-toolbar" role="toolbar">
     	<div class="btn-group">
 	    	<c:if test="${list}">
-		    	<a href="${path}/list?size=10" class="btn btn-default">
-		    		<spring:message code="entity_list_all" arguments="${label}" />
+	    		<spring:url value="${path}/list?size=10" var="list_url"/>
+		    	<a href="${list_url}" class="btn btn-default">
+		    		<spring:message code="entity_list_all" arguments="${labelPlural}" />
 		    		<span class="fa fa-th-list fa-fw"></span>
 		    	</a>
 	    	</c:if>
