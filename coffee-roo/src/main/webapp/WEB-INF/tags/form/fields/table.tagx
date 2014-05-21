@@ -40,8 +40,8 @@
     <c:set var="patterns" value="${fn:split(columnDatePatterns, '&#9999;')}" scope="request" />
 
     <spring:eval var="colCounter" expression="1" />
-
-    <table>
+	<div class="table-responsive">
+    <table class="table">
       <thead>
         <tr>
           <c:forTokens items="${columnLabels}" delims="${'&#9999;'}" var="columnHeading">
@@ -156,7 +156,7 @@
         </td>
       </tr>
     </table>
-
+	</div>
   </c:if>
 
 </jsp:root>

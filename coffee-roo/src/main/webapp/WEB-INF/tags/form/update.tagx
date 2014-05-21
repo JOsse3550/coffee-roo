@@ -11,13 +11,20 @@
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="openPane" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Control if the title pane is opened or closed by default (default: true)" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
-
+  <jsp:directive.attribute name="list" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Include 'list' link into table (default false)" />
+  
   <c:if test="${empty render or render}">
     <c:if test="${empty label}">
       <spring:message code="label_${fn:toLowerCase(fn:substringAfter(id,'_'))}" var="label" htmlEscape="false" />
     </c:if>
+    <c:if test="${empty labelPlural}">
+      <spring:message code="label_${fn:toLowerCase(fn:substringAfter(id,'_'))}_plural" var="labelPlural" htmlEscape="false" />
+    </c:if>
     <c:if test="${empty idField}">
       <c:set value="id" var="idField" />
+    </c:if>
+   	<c:if test="${empty list}">
+      <c:set var="list" value="false" />
     </c:if>
     <c:if test="${empty versionField}">
       <c:set value="version" var="versionField" />
@@ -27,21 +34,57 @@
       <c:set var="enctype" value="multipart/form-data"/>
     </c:if>
     <spring:message arguments="${label}" code="entity_update" var="title_msg" htmlEscape="false" />
-    <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
-      <spring:url value="${path}" var="form_url" />
-      <form:form action="${form_url}" method="PUT" modelAttribute="${modelAttribute}" enctype="${enctype}">
-        <form:errors cssClass="errors" delimiter="&lt;p/&gt;" />
-        <jsp:doBody />
-        <div class="submit" id="${fn:escapeXml(id)}_submit">
-          <spring:message code="button_save" var="save_button" htmlEscape="false" />
-          <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>
-          <input id="proceed" type="submit" value="${fn:escapeXml(save_button)}" />
-        </div>
-        <form:hidden id="_${fn:escapeXml(idField)}_id" path="${fn:escapeXml(idField)}" />
-        <c:if test="${versionField ne 'none'}">
-          <form:hidden id="_${fn:escapeXml(versionField)}_id" path="${fn:escapeXml(versionField)}" />
-        </c:if>
-      </form:form>
-    </util:panel>
+    <h1 class="page-header">
+    	${labelPlural}
+    </h1>
+    <p>
+    	<div class="btn-toolbar" role="toolbar">
+    		<div class="btn-group">
+		    	<c:if test="${list}">
+			    	<a href="${path}/list?size=10" class="btn btn-default">
+			    		<spring:message code="entity_list_all" arguments="${label}" />
+			    		<span class="fa fa-th-list fa-fw"></span>
+			    	</a>
+		    	</c:if>
+	    	</div>
+    	</div>
+    </p>
+    
+    <div class="panel panel-default">
+    	<div class="panel-heading">
+    		${title_msg}
+    	</div>
+    	<div class="pane panel-body">
+      	<spring:url value="${path}/update" var="form_url" />
+      
+	      <form:form action="${form_url}" method="PUT" modelAttribute="${modelAttribute}" enctype="${enctype}" role="form" cssClass="form-horizontal">
+	        <div class="col-sm-6">
+	        <form:errors cssClass="errors" delimiter="&lt;p/&gt;" />
+	        <jsp:doBody />
+	         <div class="form-group">
+	   			<div class="col-sm-10">
+		          	<spring:message code="button_save" var="save_button" htmlEscape="false" />
+		          	<script type="text/javascript">
+		          	//Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));
+		          	</script>
+		          	<button id="proceed" type="submit" value="${fn:escapeXml(save_button)}" class="btn btn-success">
+		          		<spring:message code="button_save"/>
+		          		<span class="fa fa-save fa-fw"></span>
+		          	</button>
+	          	</div>
+	        </div>
+	        <form:hidden id="_${fn:escapeXml(idField)}_id" path="${fn:escapeXml(idField)}" />
+	        <c:if test="${versionField ne 'none'}">
+	          <form:hidden id="_${fn:escapeXml(versionField)}_id" path="${fn:escapeXml(versionField)}" />
+	        </c:if>
+	        </div>
+	      </form:form>
+      </div>
+      <div class="panel-footer">
+           <span>
+           	<spring:message code="global_sponsored"/>
+           </span>
+       </div>
+    </div>
   </c:if>
 </jsp:root>

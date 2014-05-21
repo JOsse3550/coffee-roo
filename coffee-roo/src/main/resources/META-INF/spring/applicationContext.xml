@@ -83,5 +83,6 @@
    </bean>
     
     <bean id="userService" class="com.j1987.coffeeroo.services.dao.UserServiceImpl" />
+    <bean id="companyService" class="com.j1987.coffeeroo.services.dao.CompanyServiceImpl" />
     <bean id="securityService" class="com.j1987.coffeeroo.services.security.JSecurityServiceImpl"/>
 </beans>
