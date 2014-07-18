@@ -343,17 +343,6 @@
         </dependency>
     </dependencies>
     
-    <!-- ***************** -->
-    <dependencies>
-        <dependency>
-            <groupId>com.j1987.coffeeroo</groupId>
-            <artifactId>coffee-roo</artifactId>
-            <type>war</type>
-            <version>${target.version}</version>
-        </dependency>
-    </dependencies>
-    <!-- ********************** -->
-    
     <build>
         <plugins>
             <plugin>
