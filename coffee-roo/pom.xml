@@ -360,6 +360,17 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+            
+            <!-- adding at 18/07/2014 -->
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <preparationGoals>clean install</preparationGoals>
+                </configuration>
+            </plugin>
+            <!-- end of adding at 18/07/2014 -->
+            
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
