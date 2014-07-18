@@ -496,6 +496,8 @@
                 </configuration>
             </plugin>
             
+            <!-- adding at 18 / 07 / 2014 by OSSE Joel-->
+            
             <plugin>
             	<groupId>org.codehaus.cargo</groupId>
             	<artifactId>cargo-maven2-plugin</artifactId>
@@ -508,16 +510,16 @@
             		<configuration>
             			<type>runtime</type>
             			<properties>
-            				<cargo.remote.username>${tomcat.username}</cargo.remote.username>
-            				<cargo.remote.password>${tomcat.password}</cargo.remote.password>
+            				<cargo.remote.username>hakilisoft</cargo.remote.username>
+            				<cargo.remote.password>hakilisoft</cargo.remote.password>
             				<cargo.tomcat.manager.url>${tomcat.manager.url}</cargo.tomcat.manager.url>
             			</properties>
             		</configuration>
             		<deployer>
             			<deployables>
             				<deployable>
-            					<groupId>${project.groupId}</groupId>
-            					<artifactId>${project.artifactId}</artifactId>
+            					<groupId>com.j1987.coffeeroo</groupId>
+            					<artifactId>coffee-roo</artifactId>
             					<type>war</type>
             					<properties>
             						<context>coffeeroo</context>
@@ -530,4 +532,30 @@
             
         </plugins>
     </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.j1987.coffeeroo</groupId>
+            <artifactId>coffee-roo</artifactId>
+            <type>war</type>
+            <version>${target.version}</version>
+        </dependency>
+    </dependencies>
+    <properties>
+        <target.version>RELEASE</target.version>
+        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
+        <tomcat.username>admin</tomcat.username>
+        <tomcat.password>password</tomcat.password>
+    </properties>
+    <profiles>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <tomcat.manager.url>http://localhost:8889/manager</tomcat.manager.url>
+            </properties>
+        </profile>
+    </profiles>
+    <!-- end of adding by OSSE Joel -->
+    
 </project>
+
