@@ -544,25 +544,7 @@
             			</deployables>
             		</deployer>
         	    </configuration>
-        	    <executions>
-        	        <execution>
-        	            <id>verify-deploy</id>
-        	            <phase>install</phase>
-        	            <goals>
-        	                <goal>deployer-deploy</goal>
-        	                <goal>start</goal>
-        	            </goals>
-        	        </execution>
-        	        <execution>
-        	            <id>clean-undeploy</id>
-        	            <phase>pre-clean</phase>
-        	            <goals>
-        	                <goal>stop</goal>
-        	            </goals>
-        	        </execution>
-        	    </executions>
             </plugin>
-            
         </plugins>
     </build>
     <!-- end of adding by OSSE Joel -->
