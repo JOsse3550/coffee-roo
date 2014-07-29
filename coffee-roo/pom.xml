@@ -359,16 +359,7 @@
     </dependency>
         
     </dependencies>p
-    
-    <profiles>
-        <profile>
-            <id>uat</id>
-            <properties>
-                <tomcat.manager.url>http://localhost:8889/manager</tomcat.manager.url>
-            </properties>
-        </profile>
-    </profiles>
-    
+  
     <build>
         <plugins>
             <plugin>
@@ -574,6 +565,15 @@
             
         </plugins>
     </build>
+      
+    <profiles>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <tomcat.manager.url>http://localhost:8889/manager</tomcat.manager.url>
+            </properties>
+        </profile>
+    </profiles>
     
     
     <!-- end of adding by OSSE Joel -->
