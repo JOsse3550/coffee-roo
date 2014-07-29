@@ -17,6 +17,14 @@
     <jasperreportsfonts.version>4.0.0</jasperreportsfonts.version>
     <apachepoi.version>3.9</apachepoi.version>
     <spring-security.version>3.1.0.RELEASE</spring-security.version>
+    
+    
+        <target.version>RELEASE</target.version>
+        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
+        <tomcat.username>hakilisoft</tomcat.username>
+        <tomcat.password>hakilisoft</tomcat.password>
+        
+        
     </properties>
     <repositories>
         <repository>
@@ -350,14 +358,7 @@
         <version>${target.version}</version>
     </dependency>
         
-    </dependencies>
-          
-    <properties>
-        <target.version>RELEASE</target.version>
-        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
-        <tomcat.username>hakilisoft</tomcat.username>
-        <tomcat.password>hakilisoft</tomcat.password>
-    </properties>
+    </dependencies>p
     
     <profiles>
         <profile>
