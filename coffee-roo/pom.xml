@@ -341,6 +341,16 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>${spring-security.version}</version>
         </dependency>
+                  
+            
+    <dependency>
+        <groupId>com.j1987.coffeeroo</groupId>
+        <artifactId>coffee-roo</artifactId>
+        <type>war</type>
+        <version>${target.version}</version>
+    </dependency>
+        
+        
     </dependencies>
     
     <build>
@@ -545,14 +555,6 @@
             		</deployer>
         	    </configuration>
             </plugin>
-            
-            
-    <dependency>
-        <groupId>com.j1987.coffeeroo</groupId>
-        <artifactId>coffee-roo</artifactId>
-        <type>war</type>
-        <version>${target.version}</version>
-    </dependency>
             
         </plugins>
     </build>
