@@ -17,13 +17,6 @@
     <jasperreportsfonts.version>4.0.0</jasperreportsfonts.version>
     <apachepoi.version>3.9</apachepoi.version>
     <spring-security.version>3.1.0.RELEASE</spring-security.version>
-    
-    
-        <target.version>RELEASE</target.version>
-        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
-        <tomcat.username>hakilisoft</tomcat.username>
-        <tomcat.password>hakilisoft</tomcat.password>
-        
         
     </properties>
     <repositories>
@@ -350,24 +343,7 @@
             <version>${spring-security.version}</version>
         </dependency>
                   
-            
-    <dependency>
-        <groupId>com.j1987.coffeeroo</groupId>
-        <artifactId>coffee-roo</artifactId>
-        <type>war</type>
-        <version>${target.version}</version>
-    </dependency>
-        
     </dependencies>
-      
-    <profiles>
-        <profile>
-            <id>uat</id>
-            <properties>
-                <tomcat.manager.url>http://localhost:8889/manager</tomcat.manager.url>
-            </properties>
-        </profile>
-    </profiles>
   
     <build>
         <plugins>
