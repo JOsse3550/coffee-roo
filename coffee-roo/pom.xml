@@ -349,7 +349,9 @@
         <type>war</type>
         <version>${target.version}</version>
     </dependency>
-         
+        
+    </dependencies>
+          
     <properties>
         <target.version>RELEASE</target.version>
         <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
@@ -365,8 +367,6 @@
             </properties>
         </profile>
     </profiles>
-        
-    </dependencies>
     
     <build>
         <plugins>
