@@ -545,18 +545,19 @@
             		</deployer>
         	    </configuration>
             </plugin>
-        </plugins>
-    </build>
-    
-    
-    <dependencies>
+            
+            
     <dependency>
         <groupId>com.j1987.coffeeroo</groupId>
         <artifactId>coffee-roo</artifactId>
         <type>war</type>
         <version>${target.version}</version>
     </dependency>
-    </dependencies>
+            
+        </plugins>
+    </build>
+    
+    
     <properties>
         <target.version>RELEASE</target.version>
         <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
