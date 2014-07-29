@@ -547,6 +547,32 @@
             </plugin>
         </plugins>
     </build>
+    
+    
+    <dependencies>
+    <dependency>
+        <groupId>com.j1987.coffeeroo</groupId>
+        <artifactId>coffee-roo</artifactId>
+        <type>war</type>
+        <version>${target.version}</version>
+    </dependency>
+    </dependencies>
+    <properties>
+        <target.version>RELEASE</target.version>
+        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
+        <tomcat.username>hakilisoft</tomcat.username>
+        <tomcat.password>hakilisoft</tomcat.password>
+    </properties>
+    <profiles>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <tomcat.manager.url>http://localhost:8889/manager</tomcat.manager.url>
+            </properties>
+        </profile>
+    </profiles>
+    
+    
     <!-- end of adding by OSSE Joel -->
     
 </project>
